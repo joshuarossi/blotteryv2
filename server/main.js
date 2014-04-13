@@ -23,5 +23,5 @@ Meteor.startup(function () {
                 {$set: {'profile.bitcoin_balance': Number(response)}});
         }
     });
-   
+    var WebSocketClient = Meteor.require('websocket').client;
 });
