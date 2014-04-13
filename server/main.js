@@ -3,7 +3,6 @@
  */
 
 
-
 function subscribeToAll(ws) {
     var addresses = Meteor.users.find({'profile.bitcoin_address': {$exists: true}}, {'profile.bitcoin_address': 1, _id: 0});
     addresses.forEach(function (each) {
