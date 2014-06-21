@@ -7,9 +7,10 @@ Template.balances.balances = function () {
 };
 
 Template.balances.events({
-    'click input': function () {
-        // template data, if any, is available in 'this'
-        if (typeof console !== 'undefined')
-            console.log("You pressed the button");
-    }
 });
+
+UI.registerHelper("Users", Meteor.users);
+
+Template.signup_form.editingDoc = function () {
+    return Meteor.user();
+};
