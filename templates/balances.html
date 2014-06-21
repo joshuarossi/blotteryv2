@@ -1,0 +1,15 @@
+<template name="balances">
+    <ul>
+        {{#each balances}}
+        <li>
+            <p>User Name: {{username}}</p>
+
+            <p>URL: {{profile.URL}}</p>
+
+            <p>Bitcoin Address: {{profile.bitcoin_address}}</p>
+
+            <p>Bitcoin Balance: {{profile.bitcoin_balance}}</p>
+        </li>
+        {{/each}}
+    </ul>
+</template>

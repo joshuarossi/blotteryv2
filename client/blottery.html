@@ -3,29 +3,5 @@
 </head>
 
 <body>
-{{> main}}
-{{> profile}}
+<div>{{> loginButtons}}</div>
 </body>
-
-<template name="main">
-    <div>{{> loginButtons}}</div>
-    <ul>
-    {{#each balances}}
-        <li>
-            <p>User Name: {{username}}</p>
-            <p>URL: {{profile.URL}}</p>
-            <p>Bitcoin Address: {{profile.bitcoin_address}}</p>
-            <p>Bitcoin Balance: {{profile.bitcoin_balance}}</p>
-        </li>
-    {{/each}}
-    </ul>
-</template>
-<template name="profile">
-    <div class="profile">
-        <label for="name"></label><input id="name" type="text"/>
-        <label for="website"></label><input id="website" type="text"/>
-        <label for="withdrawal_address"></label><input id="withdrawal_address" type="text"/>
-        <label for="blottery_address"></label><input id="blottery_address" type="text"/>
-        <input type="button" class="update" value="Submit"/>
-    </div>
-</template>
