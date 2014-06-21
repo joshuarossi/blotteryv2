@@ -4,9 +4,11 @@
 
 
 function subscribeToAll(ws) {
-    var addresses = Meteor.users.find({'profile.bitcoin_address': {$exists: true}}, {'profile.bitcoin_address': 1, _id: 0});
+    var addresses = Meteor.users.find(
+        {'profile.bitcoin_address': {$exists: true}}, {'profile.bitcoin_address': 1, _id: 0});
     addresses.forEach(function (each) {
         var requestObj = {"op": "addr_sub", "addr": each.profile.bitcoin_address};
+        console.log('attempting subscription to ' + each.profile.bitcoin_address);
         var request = JSON.stringify(requestObj);
         ws.sendUTF(request);
         console.log(request);
@@ -51,6 +53,7 @@ function handleOutputs(tx) {
 
 
 var incomingTransaction = function (tx) {
+    console.log('Incoming Transaction');
     console.log(tx);
     handleInputs(tx);
     handleOutputs(tx);
@@ -67,7 +70,6 @@ function connectionCloseHandler() {
 function connectionMessageHandler(message) {
     jsonMessage = JSON.parse(message.utf8Data);
     if (jsonMessage.op == 'utx') {
-        console.log('first test passed');
         try {
             incomingTransaction(jsonMessage);
         }
@@ -101,19 +103,41 @@ var startWebSocket = function () {
     client.connect('ws://ws.blockchain.info/inv');
 };
 
+function testBitCore () {
+    var bitcore = Meteor.require('bitcore');
+    var password = 'an example of an insecure password';
+    var privateKey = bitcore.util.sha256(password);
+
+    var key = new bitcore.Key();
+    key.private = privateKey;
+    key.regenerateSync();
+
+    var hash = bitcore.util.sha256ripe160(key.public);
+    var version = bitcore.networks['livenet'].addressVersion;
+
+    var addr = new bitcore.Address(version, hash);
+
+    console.log("Brain wallet address: " + addr.toString());
+
+    console.log('Bitcore now available');
+}
+
 Meteor.startup(function () {
     Meteor.users.find().forEach(function (each) {
-        console.log("Bitcoin Address: " + each.profile.bitcoin_address);
-        var url = "https://blockchain.info/q/addressbalance/" + String(each.profile.bitcoin_address) + "?confirmations=0";
-        var result = HTTP.get(url, 3000);
-        if (result.statusCode == 200) {
-            var response = result.content;
-            console.log(response);
-            Meteor.users.update(
-                {'profile.bitcoin_address': each.profile.bitcoin_address},
-                {$set: {'profile.bitcoin_balance': Number(response)}});
+        if (each.hasOwnProperty('profile')) {
+            console.log("Bitcoin Address: " + each.profile.bitcoin_address);
+            var url = "https://blockchain.info/q/addressbalance/" + String(each.profile.bitcoin_address) + "?confirmations=0";
+            var result = HTTP.get(url, 3000);
+            if (result.statusCode == 200) {
+                var response = result.content;
+                console.log(response);
+                Meteor.users.update(
+                    {'profile.bitcoin_address': each.profile.bitcoin_address},
+                    {$set: {'profile.bitcoin_balance': Number(response)}});
+            }
         }
     });
+    testBitCore();
     startWebSocket();
 
 });
