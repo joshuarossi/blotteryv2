@@ -1,6 +1,7 @@
 /**
  * Created by josh on 6/21/14.
  */
+
 SimpleSchema.debug = true;
 Schema = {};
 
