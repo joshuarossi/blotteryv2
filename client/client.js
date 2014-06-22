@@ -14,3 +14,6 @@ UI.registerHelper("Users", Meteor.users);
 Template.signup_form.editingDoc = function () {
     return Meteor.user();
 };
+Accounts.ui.config({
+    passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
+});
