@@ -1,3 +1,4 @@
+<!--suppress ALL -->
 <template name="header">
 
     <nav class="navbar navbar-inverse" role="navigation">
@@ -17,12 +18,12 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
+                    <li class="active"><a href="{{ pathFor 'home' }}">Home</a></li>
+                    <li><a href="{{pathFor 'balances'}}">Balances</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>{{> loginButtons}}</li>
-                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="{{pathFor 'signup'}}">Profile</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
