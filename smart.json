@@ -2,6 +2,7 @@
   "packages": {
     "npm": {},
     "iron-router": {},
-    "autoform": {}
+    "autoform": {},
+    "bootstrap-3": {}
   }
 }

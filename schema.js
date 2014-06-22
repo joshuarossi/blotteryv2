@@ -1,6 +1,7 @@
 /**
  * Created by josh on 6/21/14.
  */
+SimpleSchema.debug = true;
 Schema = {};
 
 Schema.UserCountry = new SimpleSchema({
@@ -80,7 +81,12 @@ Schema.User = new SimpleSchema({
         type: Boolean
     },
     createdAt: {
-        type: Date
+        type: Date,
+        optional: true
+    },
+    modifiedAt: {
+        type: Date,
+        optional: true
     },
     profile: {
         type: Schema.UserProfile,
