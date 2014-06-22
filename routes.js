@@ -7,4 +7,12 @@ Router.map(function () {
     this.route('profile', {path: '/profile'});
     this.route('signup_form', {path: '/signup'});
     this.route('about');
+    this.route('plugin', {
+        path: '/plugin/:username',
+        data: function () {
+            console.log(this.params);
+//            return Meteor.users.findOne({'username': this.params.username})
+            return this.params
+        }
+    });
 });
