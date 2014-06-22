@@ -1,7 +1,9 @@
 /**
  * Created by josh on 6/21/14.
  */
-
+Router.configure({
+    notFoundTemplate: 'notfound' // this will render
+});
 Router.map(function () {
     this.route('home', {
         path: '/',
@@ -10,6 +12,10 @@ Router.map(function () {
         yieldTemplates: {
             'header': {to: 'header'},
             'footer': {to: 'footer'}
+        },
+        notFoundTemplate: 'notfound',
+        data: function () {
+            return null;
         }
     });
     this.route('balances', {path: '/balances'});
