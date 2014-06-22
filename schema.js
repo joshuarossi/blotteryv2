@@ -4,15 +4,15 @@
 SimpleSchema.debug = true;
 Schema = {};
 
-Schema.UserCountry = new SimpleSchema({
-    name: {
-        type: String
-    },
-    code: {
-        type: String,
-        regEx: /^[A-Z]{2}$/
-    }
-});
+//Schema.UserCountry = new SimpleSchema({
+//    name: {
+//        type: String
+//    },
+//    code: {
+//        type: String,
+//        regEx: /^[A-Z]{2}$/
+//    }
+//});
 
 Schema.UserProfile = new SimpleSchema({
     firstName: {
@@ -43,19 +43,19 @@ Schema.UserProfile = new SimpleSchema({
         type: String,
         optional: true
     },
-    country: {
-        type: Schema.UserCountry,
-        optional: true
-    },
+//    country: {
+//        type: Schema.UserCountry,
+//        optional: true
+//    },
     withdrawal_address: {
         type: String,
         optional: true
     },
-    blottery_address: {
+    bitcoin_address: {
         type: String,
         optional: true
     },
-    balance: {
+    bitcoin_balance: {
         type: Number,
         optional: true
     }
@@ -90,7 +90,8 @@ Schema.User = new SimpleSchema({
     },
     profile: {
         type: Schema.UserProfile,
-        optional: true
+        optional: true,
+        blackbox: true
     },
     services: {
         type: Object,
@@ -99,5 +100,5 @@ Schema.User = new SimpleSchema({
     }
 });
 
-UI.registerHelper("Schema", Schema.UserProfile);
+UI.registerHelper("Schema", Schema.User);
 Meteor.users.attachSchema(Schema.User);

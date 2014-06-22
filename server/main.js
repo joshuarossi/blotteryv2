@@ -107,7 +107,6 @@ function testBitCore () {
     var bitcore = Meteor.require('bitcore');
     var password = 'an example of an insecure password';
     var privateKey = bitcore.util.sha256(password);
-
     var key = new bitcore.Key();
     key.private = privateKey;
     key.regenerateSync();
@@ -126,14 +125,18 @@ Meteor.startup(function () {
     Meteor.users.find().forEach(function (each) {
         if (each.hasOwnProperty('profile')) {
             console.log("Bitcoin Address: " + each.profile.bitcoin_address);
-            var url = "https://blockchain.info/q/addressbalance/" + String(each.profile.bitcoin_address) + "?confirmations=0";
-            var result = HTTP.get(url, 3000);
-            if (result.statusCode == 200) {
-                var response = result.content;
-                console.log(response);
-                Meteor.users.update(
-                    {'profile.bitcoin_address': each.profile.bitcoin_address},
-                    {$set: {'profile.bitcoin_balance': Number(response)}});
+            var bitcore = Meteor.require('bitcore');
+            console.log("Is Valid: "+ (new bitcore.Address(each.profile.bitcoin_address)).isValid().toString());
+            if (new bitcore.Address(each.profile.bitcoin_address).isValid()){
+                var url = "https://blockchain.info/q/addressbalance/" + String(each.profile.bitcoin_address) + "?confirmations=0";
+                var result = HTTP.get(url, 5000);
+                if (result.statusCode == 200) {
+                    var response = result.content;
+                    console.log(response);
+                    Meteor.users.update(
+                        {'profile.bitcoin_address': each.profile.bitcoin_address},
+                        {$set: {'profile.bitcoin_balance': Number(response)}});
+                }
             }
         }
     });
