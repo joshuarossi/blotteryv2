@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ddad86b-7c05-4486-9fc2-506ad70727fa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/notfound.html" afterPath="$PROJECT_DIR$/templates/notfound.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/notFound.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/notfound.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.js" afterPath="$PROJECT_DIR$/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -30,7 +31,7 @@
       <file leaf-file-name="routes.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="7" selection-start="464" selection-end="464" vertical-scroll-proportion="0.479798" vertical-offset="0" max-vertical-offset="594">
+            <state line="28" column="9" selection-start="797" selection-end="797" vertical-scroll-proportion="0.7070707" vertical-offset="0" max-vertical-offset="594">
               <folding />
             </state>
           </provider>
@@ -108,8 +109,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notfound.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/notfound.html">
+      <file leaf-file-name="notFound.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/notFound.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="1" column="22" selection-start="49" selection-end="49" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="120">
               <folding />
@@ -444,7 +445,11 @@
       <created>1403419386369</created>
       <updated>1403419386369</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="added in header and footer to a master template and added that master template to the home route&#10;">
+      <created>1403419987309</created>
+      <updated>1403419987309</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -789,7 +794,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/notfound.html">
+    <entry file="file://$PROJECT_DIR$/templates/notFound.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="22" selection-start="49" selection-end="49" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="120">
           <folding />
@@ -798,7 +803,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="7" selection-start="464" selection-end="464" vertical-scroll-proportion="0.479798" vertical-offset="0" max-vertical-offset="594">
+        <state line="28" column="9" selection-start="797" selection-end="797" vertical-scroll-proportion="0.7070707" vertical-offset="0" max-vertical-offset="594">
           <folding />
         </state>
       </provider>

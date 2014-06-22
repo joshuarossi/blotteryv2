@@ -2,7 +2,7 @@
  * Created by josh on 6/21/14.
  */
 Router.configure({
-    notFoundTemplate: 'notfound' // this will render
+    notFoundTemplate: 'notFound' // this will render
 });
 Router.map(function () {
     this.route('home', {
@@ -13,7 +13,7 @@ Router.map(function () {
             'header': {to: 'header'},
             'footer': {to: 'footer'}
         },
-        notFoundTemplate: 'notfound',
+        notFoundTemplate: 'notFound',
         data: function () {
             return null;
         }
