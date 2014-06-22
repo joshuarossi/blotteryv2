@@ -5,7 +5,8 @@
       "npm": {},
       "iron-router": {},
       "autoform": {},
-      "bootstrap-3": {}
+      "bootstrap-3": {},
+      "fast-render": {}
     },
     "packages": {
       "npm": {
@@ -27,6 +28,11 @@
         "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
         "tag": "v3.1.1-1",
         "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
+      },
+      "fast-render": {
+        "git": "https://github.com/arunoda/meteor-fast-render.git",
+        "tag": "v0.2.8",
+        "commit": "149984b1aff3a5642a270aff9bd9006872c8302e"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

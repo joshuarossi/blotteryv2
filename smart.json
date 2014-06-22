@@ -3,6 +3,7 @@
     "npm": {},
     "iron-router": {},
     "autoform": {},
-    "bootstrap-3": {}
+    "bootstrap-3": {},
+    "fast-render": {}
   }
 }
