@@ -4,3 +4,10 @@ li {
     background-color: green;
     color: white;
 }
+
+.form-control {
+    width: auto;
+}
+#signup-form {
+    width: auto;
+}
