@@ -27,7 +27,13 @@ Router.map(function () {
             'header': {to: 'header'},
             'footer': {to: 'footer'}
         }});
-    this.route('about');
+    this.route('about', {path: '/about',
+        layoutTemplate: 'layout',
+        yieldTemplates: {
+            'header': {to: 'header'},
+            'footer': {to: 'footer'}
+        }});
+    this.route('terms');
     this.route('plugin', {
         path: '/plugin/:username',
         data: function () {
