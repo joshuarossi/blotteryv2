@@ -12,14 +12,21 @@ Router.map(function () {
         yieldTemplates: {
             'header': {to: 'header'},
             'footer': {to: 'footer'}
-        },
-        notFoundTemplate: 'notFound',
-        data: function () {
-            return null;
         }
     });
-    this.route('balances', {path: '/balances'});
-    this.route('signup_form', {path: '/signup'});
+    this.route('balances', {path: '/balances',
+        layoutTemplate: 'layout',
+        yieldTemplates: {
+            'header': {to: 'header'},
+            'footer': {to: 'footer'}
+        }
+    });
+    this.route('signup_form', {path: '/signup',
+        layoutTemplate: 'layout',
+        yieldTemplates: {
+            'header': {to: 'header'},
+            'footer': {to: 'footer'}
+        }});
     this.route('about');
     this.route('plugin', {
         path: '/plugin/:username',
