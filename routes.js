@@ -31,8 +31,7 @@ Router.map(function () {
     this.route('plugin', {
         path: '/plugin/:username',
         data: function () {
-//            return Meteor.users.findOne({'username': this.params.username})
-            return this.params
+            return Meteor.users.findOne({'username':this.params.username});
         }
     });
 });

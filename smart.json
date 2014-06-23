@@ -4,6 +4,7 @@
     "iron-router": {},
     "autoform": {},
     "bootstrap-3": {},
-    "fast-render": {}
+    "fast-render": {},
+    "qrcodesvg": {}
   }
 }

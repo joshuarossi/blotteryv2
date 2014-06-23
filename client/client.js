@@ -2,6 +2,16 @@
  * Created by josh on 4/13/14.
  */
 
+function drawQR(uri) {
+    var qrcodesvg = new Qrcodesvg(uri, "qrcode", 250);
+    console.log(uri);
+    qrcodesvg.draw();
+}
+
+Template.plugin.rendered = function () {
+    drawQR('bitcoin:' + this.data.profile.bitcoin_address);
+};
+
 Template.balances.balances = function () {
     return Meteor.users.find();
 };

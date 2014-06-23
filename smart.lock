@@ -6,7 +6,8 @@
       "iron-router": {},
       "autoform": {},
       "bootstrap-3": {},
-      "fast-render": {}
+      "fast-render": {},
+      "qrcodesvg": {}
     },
     "packages": {
       "npm": {
@@ -21,8 +22,8 @@
       },
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.12.0",
-        "commit": "24b0284425e446f2d88760a81052eefe74a20bbf"
+        "tag": "v0.13.0",
+        "commit": "3f294ddf3ed0acae714d5ceb8a806b25cdcd0197"
       },
       "bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
@@ -33,6 +34,11 @@
         "git": "https://github.com/arunoda/meteor-fast-render.git",
         "tag": "v0.2.8",
         "commit": "149984b1aff3a5642a270aff9bd9006872c8302e"
+      },
+      "qrcodesvg": {
+        "git": "https://github.com/sacketty/meteor-qrcodesvg.git",
+        "tag": "v0.1.0",
+        "commit": "c7e4e6bae7504cb218155e7a53e3166ad3a0e42e"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
